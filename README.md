@@ -5,7 +5,7 @@ image.args
 issue: color_space,wrap, twrap.
 
 matrix_transform.args
-issue:rotation_type
+issue: rotation_type
 
 string_replace.args
-issue:os
+issue: os
