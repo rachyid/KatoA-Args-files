@@ -1,0 +1,80 @@
+<!-- args file edited by: elrachyd@gmail.com -->
+<!-- date: 11/5/2020 -->
+
+<args format="1.0">
+<page name="Image Attributes" open="True"> 
+	<param name="filename" label="Image Name" sequenceListing="True" widget="fileInput"/>
+	<param name="filter" label="Filter" widget="mapper">
+	<hintdict name="options">
+	<string value="bilinear"/>
+	<string value="bicubic"/>
+	<string value="smart_bicubic"/>
+	<string value="closest"/>
+	</hintdict>
+	</param>
+	<param name="single_channel" label="Single Channel" widget="checkBox"/>
+	<param int="1" name="start_channel" label="Start Channel" slider="True" sensitivity="1.0" constant="True"  slidermax="255" max="255"/>
+
+</page>
+<page name="Filters">  
+	<param name="mipmap_bias" int="1" label="Mimap Bias" slider="True" sensitivity="1.0" constant="True" slidermin="-2.0" min="-2.0" slidermax="2.0" max="2.0"/>
+	<param name="multiply" label="Multiply" widget="color"/>
+	<param name="offset" label="Offset" widget="color"/>
+
+</page>
+<page name="Color Space" open="False"> 
+	<param label="Color Space" widget="popup" name="color_space">
+	<hintlist name="options">	
+	<string value="ACES2065-1"/>
+	<string value="ACEScg"/>
+	<string value="scene-linear CIE XYZ"/>
+	<string value="scene-linear DCI-P3"/>
+	<string value="scene-linear Rec-2020"/>	
+	<string value="scene-linear Rec709/sRGB"/>	
+	<string value="gamma 1.8 Rec 709"/>	
+	<string value="gamma 2.2 Rec 709"/>		
+	<string value="gamma 2.4 Rec 709(video)"/>	
+	<string value="gamma 1.8 Rec 709"/>	
+	<string value="auto"/>	
+	</hintlist>		
+	<hintlist name="sRGB">
+	<hintlist name="tags"/>	
+	</hintlist>	
+	</param>
+	<param widget="checkBox" name="ignore_missing_textures"/>
+	<param widget="color" name="missing_texture_color"/>
+
+</page>
+<page name="UV Coordinates" open="False">
+	<param name="uvset" label="UV Set" constant="True"/>
+	<param name="uvcoords" label="UV Coords"/>
+	<param name="soffset" label="Offset V" slider="True" slidermin ="1.0" slidermax="10.0" max="100.0"/>
+	<param name="toffset" label="Offset U" slider="True" slidermin ="1.0" slidermax="10.0" max="100.0"/>
+	<param name="swrap" label="Wrap U" widget="mapper" >
+	<hintdict name="options">
+	<string value="clamp"/>
+	<string value="missing"/>
+	<string value="periodic"/>
+	<string value="black"/>
+	<string value="file"/>
+	<string value="mirror"/>
+	</hintdict>
+	</param>
+	<param name="twrap" label="Wrap V" widget="mapper">
+	<hintdict name="options">
+	<string value="clamp"/>
+	<string value="missing"/>
+	<string value="periodic"/>
+	<string value="black"/>
+	<string value="file"/>
+	<string value="mirror"/>
+	</hintdict>
+	</param>
+	<param name="sscale" label="Scale U" slider="True" slidermin ="1.0" slidermax="10.0" max="100.0"/>
+	<param name="tscale" label="Scale V" slider="True" slidermin ="1.0" slidermax="10.0" max="100.0"/>
+	<param name="sflip" label="Flip U" constant="True" widget="checkBox"/>
+	<param name="tflip" label="Flip V" constant="True" widget="checkBox" />
+	<param name="swap_st" label="Swap UV" widget="checkBox"/>
+	
+</page>
+</args>
