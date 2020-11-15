@@ -1,0 +1,104 @@
+<!-- args file edited by: elrachyd@gmail.com -->
+<!-- issue: rotation type -->
+<!-- date: 11/5/2020 -->
+
+<args format="1.0">
+		<help>
+		Matrix transform
+		</help>
+	<param name="__gpu__"/>
+	<param name="transform_order" widget="mapper">
+		<help>
+		Transform order
+		</help>
+	<hintdict name="options">
+	<int value="0" name="srt"/>
+	<int value="1" name="str"/>
+	<int value="2" name="rst"/>
+	<int value="3" name="rts"/>
+	<int value="4" name="tsr"/>
+	<int value="5" name="trs"/>
+	</hintdict>
+	</param>
+	<param name="rotation_type" widget="mapper">
+		<help>
+		Rotation type
+		</help>
+	<hintdict name="options">
+	<string value="euler"/>
+	<string value="axis"/>
+	</hintdict>
+	</param>
+	<param name="units" widget="mapper">
+		<help>
+		Units expressed in degrees or radians
+		</help>
+	<hintdict name="options">
+	<int value="0" name="radians"/>
+	<int value="1" name="degrees"/>
+	</hintdict>
+	</param>
+	<param name="rotation_order" widget="mapper">
+	<hintdict name="conditionalVisOps">
+	<string value="contains" name="conditionalVisOp"/>
+	<string value="../rotation_type" name="conditionalVisPath"/>
+	<string value="euler" name="conditionalVisValue"/>
+	</hintdict>
+		<help>
+		Rotation order
+		</help>
+	<hintdict name="options">
+	<int value="0" name="xyz"/>
+	<int value="1" name="xzy"/>
+	<int value="2" name="yxz"/>
+	<int value="3" name="yzx"/>
+	<int value="4" name="zxy"/>
+	<int value="5" name="zyx"/>
+	</hintdict>
+	</param>
+	<param name="rotation">
+	<hintdict name="conditionalVisOps">
+	<string value="contains" name="conditionalVisOp"/>
+	<string value="../rotation_type" name="conditionalVisPath"/>
+	<string value="euler" name="conditionalVisValue"/>
+	</hintdict>
+		<help>
+		Amount to rotate in specified order
+		</help>
+	</param>
+	<param name="axis">
+	<hintdict name="conditionalVisOps">
+	<string value="contains" name="conditionalVisOp"/>
+	<string value="../rotation_type" name="conditionalVisPath"/>
+	<string value="axis" name="conditionalVisValue"/>
+	</hintdict>
+		<help>
+		rotation axis
+		</help>
+	</param>
+	<param name="angle">
+	<hintdict name="conditionalVisOps">
+	<string value="contains" name="conditionalVisOp"/>
+	<string value="../rotation_type" name="conditionalVisPath"/>
+	<string value="axis" name="conditionalVisValue"/>
+	</hintdict>
+		<help>
+		Rotation amount around axis
+		</help>
+	</param>
+	<param name="translate">
+		<help>
+		XYZ Translation
+		</help>
+	</param>
+	<param name="scale">
+		<help>
+		XYZ Scale
+		</help>
+	</param>
+	<param name="pivot">
+<help>
+XYZ Pivot
+</help>
+	</param>
+</args>
