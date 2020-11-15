@@ -1,0 +1,23 @@
+<!-- args file edited by: elrachyd@gmail.com -->
+<!-- issue: OS -->
+<!-- date: 11/5/2020 -->
+
+<args format="1.0">
+<param  name="enable" widget="checkBox"/>
+<param readOnly="true" widget="sortableArray" isDynamicArray="1" name="inputs">
+	<hintdict name="childHints">
+	<string value="widget"/>
+	</hintdict>
+	</param>
+<param name="selection" label="Selection"/>
+<param name="match" label="Match"/>
+<param name="replace" label="Replace" />
+<param name="os" label="OS" widget="mapper">
+	<hintdict name="options">
+	<string value="windows"/>
+	<string value="mac"/>
+	<string value="any"/>
+	<string value="linux"/>
+	</hintdict>
+	</param>
+</args>
